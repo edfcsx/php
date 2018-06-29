@@ -1,3 +1,3 @@
 # php
 
-Repositorio para os códigos PHP
+Repositorio para consulta de códigos antigos PHP
