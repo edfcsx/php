@@ -26,8 +26,19 @@ Anotações para acompanhamento do curso de laravel
 |ele ira fazer um rollback do ultimo lote executado é possivel visualizar os lotes na tabela migrations
 |comandos:
 |php artisan migrate:rollback --step=2 números de passos que você deseja executar o reset
-|php artisan migrate:rollback:reset irá resetar o conteudo de todas as tabelas
+|php artisan migrate:rollback:reset irá dropar todas as tabelas
 
+|Seeders
+|É utilizado para popular o banco de dados, auxiliando no desenvolvimento
+|Comando:
+|php artisan make:seeder nome_do_seeder
+|ex: php artisan make:seeder ProductsTableSeeder
+|obs: A cada seeder criado é necessario que ele seja chamado no DatabaseSeeder
+|Comando executando seeder
+|php artisan db:seed
+
+|Executando migrate e seed juntos
+|php artisan migrate --seed
 
 
 
