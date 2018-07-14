@@ -69,9 +69,13 @@ Anotações para acompanhamento do curso de laravel
 |pegando o sql
 |$users = \DB::table('users') ->where('id','=',13) ->select('id','name') ->toSql();
 |dd($users);
+
+|fazendo a mesma coisa porem usando a vista do modal
+|em nenhum momento foi informado a tabela, pois o laravel por convencao ira por o nome da classe no plural e ira tentar
+|encontrar a tabela. Ex class User , ele ira procurar na tabela users
+| $users = \App\User::all();
+|dd($users);
+|ou com o where
+|$users = \App\User::where('id',4)->select('id', 'name')->get();
+|dd($users);
 ***************************************************************************************************************************
-
-
-
-
-
