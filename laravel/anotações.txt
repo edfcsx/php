@@ -136,6 +136,19 @@ Anotações para acompanhamento do curso de laravel
 ***************************************************************************************************************************
 |Rotas
 
+|rota passando variavel
+|Route::get('view/{name}', function ($name){
+|    return view('helloWorld', compact('name'));
+|});
+
+|rota comum
+|Route::get('/', function () {
+|return view('welcome');
+|});
+
+|rota com controller
+|Route::get('/users', 'UserController@index'); nome_do_controller@metodo
+
 |Prefixo de Rotas
 |O prefixo nos possibilita definir um grupo para varias rotas facilitando o trabalho
 |    Route::prefix('products')->group(function (){
