@@ -40,5 +40,38 @@ Anotações para acompanhamento do curso de laravel
 |Executando migrate e seed juntos
 |php artisan migrate --seed
 
+|Factorys
+|São usadas para popular o banco com dados fakes, caso precise de mais informações olhar a fundo a biblioteca faker
+
+***************************************************************************************************************************
+|Consulta Sql fora do modal 
+|Algumas querys fora do models
+|$sql = "SELECT * FROM users WHERE id=?";
+|$users = \DB::select($sql, [12]);
+|dd($users);
+    
+|outra forma de fazer
+|$users = \DB::table('users')->get();
+|dd($users);
+
+|outra forma de fazer
+|$users = \DB::table('users') ->where('id','=',13) ->get();
+|dd($users);
+ 
+|outra forma de fazer retornando os dados fora de um array
+|$users = \DB::table('users') ->where('id','=',13) ->first();
+|dd($users);
+ 
+|outra forma de fazer retornando os dados fora de um array especificando as informacoes
+|$users = \DB::table('users') ->where('id','=',13) ->select('id','name') ->first();
+|dd($users);
+ 
+|pegando o sql
+|$users = \DB::table('users') ->where('id','=',13) ->select('id','name') ->toSql();
+|dd($users);
+***************************************************************************************************************************
+
+
+
 
 
