@@ -173,5 +173,11 @@ Anotações para acompanhamento do curso de laravel
 |Route::resource('/test', 'TestController');
 |});
 
+|chamando uma view diretamente pela rota
+|Route::view('/view', 'helloWorld', ['name' => 'Felipe']);
 
+|rota que pode ser chamada sem parametro porem com parametro padrao definido
+|Route::get('/semParametro/{name?}', function ($name = 'Felipe'){
+|return $name;
+|});
 ***************************************************************************************************************************
