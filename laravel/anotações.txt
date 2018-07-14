@@ -1,1 +1,11 @@
 
+Anotações para acompanhamento do curso de laravel
+
+| Dando starter no servidor
+| php artisan serve
+
+|Criando Migrations no laravel
+|php artisan make:migration nome_da_migration
+|Por convenção se for uma migration de criação o nome precisa ser definido pelo prefixo create_table
+|ex: php artisan make:migration create_table_products
+
