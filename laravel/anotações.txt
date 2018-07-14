@@ -4,8 +4,18 @@ Anotações para acompanhamento do curso de laravel
 | Dando starter no servidor
 | php artisan serve
 
+|Ao instalar o laravel se faz necessario a migração das migrations que acompanham o sistema
+|no mysql versão > 5.7 se faz necessário a correção de um bug. para corrigir se faz necessário aplicar uma linha em:
+|projeto/app/providers/AppServiceProvider.php
+|1 - use Illuminate\Support\Facades\Schema;
+|E na função boot aplicar o comando.
+|Schema::defaultStringLength(191);
+|Assim já será possivel a instalação das migrations.
+
 |Criando Migrations no laravel
 |php artisan make:migration nome_da_migration
 |Por convenção se for uma migration de criação o nome precisa ser definido pelo prefixo create_table
+|-create_table -alter_table -drop_table
 |ex: php artisan make:migration create_table_products
+
 
