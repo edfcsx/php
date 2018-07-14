@@ -79,3 +79,18 @@ Anotações para acompanhamento do curso de laravel
 |$users = \App\User::where('id',4)->select('id', 'name')->get();
 |dd($users);
 ***************************************************************************************************************************
+
+|salvando informações no banco
+|$user = new App\User();
+|$user->name = "Valdisneison da Silva";
+|$user->email = "valdisneison@gmail.com";
+|$user->password = bcrypt("54714299");
+|$user->save();
+
+|alterando as informacoes no banco
+|$user = \App\User::find(32);
+|$user->name = "Valdisneison da Silva Editado";
+|$user->email = "valdisneison@gmail.com";
+|$user->password = bcrypt("54714299");
+|$user->save();
+
