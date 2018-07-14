@@ -88,7 +88,7 @@ Anotações para acompanhamento do curso de laravel
 |$user->save();
 
 |alterando as informacoes no banco
-|$user = \App\User::find(32);
+|$user = \App\User::find(id);
 |$user->name = "Valdisneison da Silva Editado";
 |$user->email = "valdisneison@gmail.com";
 |$user->password = bcrypt("54714299");
