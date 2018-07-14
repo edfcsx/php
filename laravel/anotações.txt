@@ -17,5 +17,17 @@ Anotações para acompanhamento do curso de laravel
 |Por convenção se for uma migration de criação o nome precisa ser definido pelo prefixo create_table
 |-create_table -alter_table -drop_table
 |ex: php artisan make:migration create_table_products
+|Dica:
+|ao criar tabela pode ser usado o comando $table->timestamps(); ele ira criar na table o campo created_at, update_at
+|O metodo blueprint descreve a criação ou update no processo de migração das tabelas no laravel.
+
+|Rollback de migrations
+|comando: php artisan migrate:rollback
+|ele ira fazer um rollback do ultimo lote executado é possivel visualizar os lotes na tabela migrations
+|comandos:
+|php artisan migrate:rollback --step=2 números de passos que você deseja executar o reset
+|php artisan migrate:rollback:reset irá resetar o conteudo de todas as tabelas
+
+
 
 
