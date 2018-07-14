@@ -125,3 +125,10 @@ Anotações para acompanhamento do curso de laravel
 |Deletando dados em massa
 |$user = \App\User::whereIn('id',[25, 26, 27, 28, 29, 30, 31, 32]);
 |$user->delete();
+
+***************************************************************************************************************************
+|Controlers
+|comandos:
+|php artisan make:controller UserController cria um controller com o nome definido
+|php artisan make:controller UserController --resource cria o controller como recurso
+***************************************************************************************************************************
