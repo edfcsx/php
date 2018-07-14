@@ -157,4 +157,21 @@ Anotações para acompanhamento do curso de laravel
 |           return "produtos 1";
 |       })->name('products_single');
 |    });
+
+|Também é possivel criar apelidos em grupos de rotas
+|Route::prefix('products')->name('products_')->group(function (){
+|   Route::get('/', function (){
+|      return "produtos index";
+|   })->name('index');
+|   Route::get('/1', function (){
+|       return "produtos 1";
+|   })->name('single');
+|});
+
+|Utilizando namespace para acessar controllers facilmente em outras pastas
+|Route::namespace('Test')->group(function (){
+|Route::resource('/test', 'TestController');
+|});
+
+
 ***************************************************************************************************************************
