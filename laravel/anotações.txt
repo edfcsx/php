@@ -94,3 +94,26 @@ Anotações para acompanhamento do curso de laravel
 |$user->password = bcrypt("54714299");
 |$user->save();
 
+***************************************************************************************************************************
+|Utilizando mass assignment
+|com o mass assignment podemos fazer operações no banco mais rapidamente
+
+|Salvando dados no banco
+|ex:
+|$userData = [
+|'name' => 'usuario novo',
+|'email' => 'usuarionovo@hotmail.com',
+|'password' => bcrypt('54714299')
+|];
+|$user = new \App\User();
+|$user->create($userData);
+
+|Alterando dados no banco
+|$userData = [
+|'name' => 'usuario novo Editado',
+|'email' => 'usuarionovo@hotmail.com',
+|'password' => bcrypt('54714299')
+|];
+|$user = \App\User::find(33);
+|$user->update($userData);
+***************************************************************************************************************************
