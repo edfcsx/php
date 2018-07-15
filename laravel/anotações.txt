@@ -254,5 +254,12 @@ Anotações para acompanhamento do curso de laravel
 |protected $table;
 ***************************************************************************************************************************
 |Request
+|Serve para colocarmos regras como se o campo é requerido ou se tamanho minimo , maximo
 |comando:
 |php artisan make:request nome da request
+***************************************************************************************************************************
+|formulario
+|Dicas:
+
+|em um formulario de inserção de dados podemos utilizar o help value="{{old('nome_input_do_form')}}"
+|para recuperar algum dado que foi digitado no form mas que o form não pode ser validade.
