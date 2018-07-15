@@ -13,6 +13,8 @@ Anotações para acompanhamento do curso de laravel
 |Assim já será possivel a instalação das migrations.
 
 |Criando Migrations no laravel
+|criando a migrate principal ao instalar o laravel ou criar novo projeto
+|php artisan migrate:install
 |php artisan make:migration nome_da_migration
 |Por convenção se for uma migration de criação o nome precisa ser definido pelo prefixo create_table
 |-create_table -alter_table -drop_table
