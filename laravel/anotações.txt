@@ -11,14 +11,21 @@ Anotações para acompanhamento do curso de laravel
 |E na função boot aplicar o comando.
 |Schema::defaultStringLength(191);
 |Assim já será possivel a instalação das migrations.
-
+***************************************************************************************************************************
 |Criando Migrations no laravel
 |criando a migrate principal ao instalar o laravel ou criar novo projeto
 |php artisan migrate:install
+
 |php artisan make:migration nome_da_migration
 |Por convenção se for uma migration de criação o nome precisa ser definido pelo prefixo create_table
 |-create_table -alter_table -drop_table
 |ex: php artisan make:migration create_table_products
+
+|É possilvel criar também o migrate escrevendo um codigo basico para a criação da tabela no banco
+|ex:
+|php artisan make:migration create_table_restaurantes --create=restaurantes
+|assim ele ja ira criar um arquivo com um esquema básico de up e drop da tabela
+
 |Dica:
 |ao criar tabela pode ser usado o comando $table->timestamps(); ele ira criar na table o campo created_at, update_at
 |O metodo blueprint descreve a criação ou update no processo de migração das tabelas no laravel.
@@ -29,7 +36,7 @@ Anotações para acompanhamento do curso de laravel
 |comandos:
 |php artisan migrate:rollback --step=2 números de passos que você deseja executar o reset
 |php artisan migrate:rollback:reset irá dropar todas as tabelas
-
+***************************************************************************************************************************
 |Seeders
 |É utilizado para popular o banco de dados, auxiliando no desenvolvimento
 |Comando:
