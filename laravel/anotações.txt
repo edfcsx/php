@@ -232,4 +232,8 @@ Anotações para acompanhamento do curso de laravel
 |Tamém pode ser chamado um grupo de middlewares , o proprio laravel se encarregara de chamar todos os middlewares do grupo
 |Route::view('/middleware', 'helloWorld', ['name' => 'Felipe'])->middleware('nome_do_grupo');
 ***************************************************************************************************************************
-
+|Token
+|o csrf token ele serve para confirmar a identidade 
+|caso o laravel não permita o envio de algum formulario dando erro de inatividade ou algo parecido basta incluir a linha
+|{{csrf_field()}}
+***************************************************************************************************************************
