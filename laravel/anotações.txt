@@ -253,3 +253,6 @@ Anotações para acompanhamento do curso de laravel
 | */
 |protected $table;
 ***************************************************************************************************************************
+|Request
+|comando:
+|php artisan make:request nome da request
