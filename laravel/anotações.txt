@@ -193,4 +193,34 @@ Anotações para acompanhamento do curso de laravel
 |Route::get('/semParametro/{name?}', function ($name = 'Felipe'){
 |return $name;
 |});
+
+|Grupo de rotas com middleware
+|Route::group(['middleware' => 'test'], function (){
+|    Route::get('middle', function (){
+|        return 'middle';
+|    });
+|    Route::get('middle/2', function (){
+|        return 'middle 2';
+|    });
+|});
 ***************************************************************************************************************************
+|Middleware
+|Os middlewares são aplicações que estão entre o cliente e o servidor
+|Rota básica de uma aplicação
+|Client -> Http -> Request -> Middleware -> Servidor -> response -> Middleware -> next -> Middleware -> Application
+
+|Criando Middleware
+|php artisan make:middleware nome_do_middleware
+
+|Todo middleware deve ser registrado no app/kernel para que possa ser chamado
+
+|Chamando um middleware
+|Route::view('/middleware', 'helloWorld', ['name' => 'Felipe'])->middleware('test');
+
+|chamando diversos middleware
+|Route::view('/middleware', 'helloWorld', ['name' => 'Felipe'])->middleware('test','auth');
+
+|Tamém pode ser chamado um grupo de middlewares , o proprio laravel se encarregara de chamar todos os middlewares do grupo
+|Route::view('/middleware', 'helloWorld', ['name' => 'Felipe'])->middleware('nome_do_grupo');
+***************************************************************************************************************************
+
