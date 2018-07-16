@@ -263,3 +263,8 @@ Anotações para acompanhamento do curso de laravel
 
 |em um formulario de inserção de dados podemos utilizar o help value="{{old('nome_input_do_form')}}"
 |para recuperar algum dado que foi digitado no form mas que o form não pode ser validade.
+
+|caso não deseje a validação do HTML5 nos formularios basta chamar no form o novalidate()
+|e para usar a validação do laravel dando um estilo especial ao input caso esteja incorreto basta apenas 
+|adicionar na classe do input o comando:
+|@if($errors->has('nome do input') is invalid @endif
