@@ -26,6 +26,9 @@ Anotações para acompanhamento do curso de laravel
 |php artisan make:migration create_table_restaurantes --create=restaurantes
 |assim ele ja ira criar um arquivo com um esquema básico de up e drop da tabela
 
+|Criando chave estrangeira 
+|php artisan make:migratin alter_table_menu_add_foreign_restaurant
+
 |Dica:
 |ao criar tabela pode ser usado o comando $table->timestamps(); ele ira criar na table o campo created_at, update_at
 |O metodo blueprint descreve a criação ou update no processo de migração das tabelas no laravel.
@@ -50,6 +53,9 @@ Anotações para acompanhamento do curso de laravel
 |php artisan migrate --seed
 
 |Factorys
+|São usadas para popular o banco com dados padroes
+
+|Seedes
 |São usadas para popular o banco com dados fakes, caso precise de mais informações olhar a fundo a biblioteca faker
 
 ***************************************************************************************************************************
@@ -216,7 +222,7 @@ Anotações para acompanhamento do curso de laravel
 |Middleware
 |Os middlewares são aplicações que estão entre o cliente e o servidor
 |Rota básica de uma aplicação
-|Client -> Http -> Request -> Middleware -> Servidor -> response -> Middleware -> next -> Middleware -> Application
+|Client -> Http -> -> Middleware -> Servidor -> response -> Middleware -> next -> Middleware -> Application
 
 |Criando Middleware
 |php artisan make:middleware nome_do_middleware
@@ -268,3 +274,17 @@ Anotações para acompanhamento do curso de laravel
 |e para usar a validação do laravel dando um estilo especial ao input caso esteja incorreto basta apenas 
 |adicionar na classe do input o comando:
 |@if($errors->has('nome do input') is invalid @endif
+***************************************************************************************************************************
+|Chave estrangeira
+
+|A convenção do laravel para a chave estrangeira é 
+|<nome_da_tabela>_<nome_da_coluna_referencia>_<a_palavra_foreign>
+|ao usar o dropforeign você tem que chamar a ligação, caso contrario ira dar erro em um rollback
+|a chave estrangeira referencia aos menus seria 
+|menus_restaurant_id_foreign
+
+|comandos para criar chave estrangeira
+|Schema::table('menus', function (Blueprint $table){
+|           $table->integer('restaurant_id')->unsigned();
+|            $table->foreign('restaurant_id')->references('id')->on('restaurants'); 
+|        });
